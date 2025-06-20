@@ -6,115 +6,306 @@
     <title>TowMatch - Training</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Custom styles can be added here if needed, consistent with style.css */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .modal {
+            display: none; /* Hidden by default */
+        }
+        .training-card {
+            background-color: #F9FAFB; /* gray-50 */
+            border: 1px solid #E5E7EB; /* gray-200 */
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+        }
+        .training-card h4 {
+            font-weight: 600;
+            color: #374151; /* gray-700 */
+            margin-bottom: 0.75rem;
+        }
+    </style>
 </head>
 <body class="bg-gray-100 text-gray-800">
 
+    <!-- Header Section -->
     <header class="bg-slate-800 text-white shadow-md sticky top-0 z-50">
         <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
             <a href="index.html" class="text-2xl font-bold hover:text-slate-300">TowMatch</a>
             <div class="space-x-4">
                 <a href="index.html" class="hover:text-slate-300">Home</a>
-                <a href="training.html" class="hover:text-slate-300">Training</a>
                 <a href="job-listings.html" class="hover:text-slate-300">For Drivers</a>
                 <a href="job-listings.html" class="hover:text-slate-300">For Dispatchers</a>
                 <a href="company-dashboard.html" class="hover:text-slate-300">For Companies</a>
+                <a href="training.html" class="hover:text-slate-300">Training</a>
                 <button id="navLoginBtn" class="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-md text-sm font-medium">Login</button>
                 <button id="navSignupBtn" class="bg-green-500 hover:bg-green-600 px-4 py-2 rounded-md text-sm font-medium">Sign Up</button>
             </div>
         </nav>
     </header>
 
+    <!-- Main Content for Training Page -->
     <main class="container mx-auto px-6 py-8">
-        <section id="trainingPage">
-            <div class="bg-white p-8 rounded-lg shadow-lg">
-                <h1 class="text-4xl font-bold text-center text-slate-800">TowMatch Driver, Dispatcher, & Technician Training</h1>
-                <p class="text-xl text-center text-gray-600 mt-2">Upgrade Your Skills. Boost Your Job Matches. Get Paid What You're Worth.</p>
-                
-                <p class="mt-8 max-w-4xl mx-auto text-lg">Whether you’re just starting out or want to sharpen your skills, TowMatch Training makes it easy. Our short, mobile-friendly lessons teach you how to stay safe, use equipment the right way, and stand out to top employers. Learn on your schedule—and get matched to better jobs, faster.</p>
 
-                <div class="mt-12">
-                    <h2 class="text-3xl font-bold text-slate-700">What You’ll Learn</h2>
-                    <div class="mt-6 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <!-- Getting Started -->
-                        <div class="border p-6 rounded-lg">
-                            <h3 class="text-xl font-semibold text-slate-600 mb-3">Getting Started</h3>
-                            <ul class="list-disc list-inside space-y-2 text-gray-700">
-                                <li>What to Expect as a Tow Professional</li>
-                                <li>Understanding How TowMatch Works</li>
-                                <li>Building a Standout Profile</li>
-                            </ul>
-                        </div>
-                        <!-- Certifications & Safety -->
-                        <div class="border p-6 rounded-lg">
-                            <h3 class="text-xl font-semibold text-slate-600 mb-3">Certifications & Safety</h3>
-                            <ul class="list-disc list-inside space-y-2 text-gray-700">
-                                <li>TIMs Training Overview</li>
-                                <li>Basic WreckMaster Techniques</li>
-                                <li>On-the-Road Safety Do’s and Don’ts</li>
-                            </ul>
-                        </div>
-                        <!-- Equipment Handling -->
-                        <div class="border p-6 rounded-lg">
-                            <h3 class="text-xl font-semibold text-slate-600 mb-3">Equipment Handling</h3>
-                            <ul class="list-disc list-inside space-y-2 text-gray-700">
-                                <li>Flatbed & Rollback Basics</li>
-                                <li>Auto Loader & Wheel-Lift Overview</li>
-                                <li>Proper Dolly and Winching Usage</li>
-                            </ul>
-                        </div>
-                        <!-- Customer Experience -->
-                        <div class="border p-6 rounded-lg">
-                            <h3 class="text-xl font-semibold text-slate-600 mb-3">Customer Experience</h3>
-                            <ul class="list-disc list-inside space-y-2 text-gray-700">
-                                <li>Communicating with Stranded Motorists</li>
-                                <li>De-Escalation & Damage Prevention</li>
-                                <li>Representing Your Company Professionally</li>
-                            </ul>
-                        </div>
-                        <!-- Job Readiness -->
-                        <div class="border p-6 rounded-lg">
-                            <h3 class="text-xl font-semibold text-slate-600 mb-3">Job Readiness</h3>
-                            <ul class="list-disc list-inside space-y-2 text-gray-700">
-                                <li>Daily Pre-Trip Checklists</li>
-                                <li>Interview Prep & Common Mistakes</li>
-                                <li>Essential Tools & Gear</li>
-                            </ul>
-                        </div>
-                        <!-- Advanced Operations -->
-                        <div class="border p-6 rounded-lg bg-gray-50">
-                            <h3 class="text-xl font-semibold text-slate-600 mb-3">Advanced Operations</h3>
-                             <ul class="list-disc list-inside space-y-2 text-gray-700">
-                                <li>Complex Recovery Techniques</li>
-                                <li>Heavy-Duty Operations</li>
-                                <li>Working in Extreme Conditions</li>
-                                <li class="text-gray-500 italic">(Coming Soon)</li>
-                            </ul>
-                        </div>
+        <section id="trainingPage">
+            <!-- Hero Section -->
+            <div class="bg-white p-8 rounded-lg shadow-lg text-center mb-12">
+                <h1 class="text-4xl font-bold mb-2 text-slate-800">TowMatch Driver, Dispatcher, & Technician Training</h1>
+                <p class="text-xl text-slate-600 font-semibold mb-4">Upgrade Your Skills. Boost Your Job Matches. Get Paid What You're Worth.</p>
+                <p class="max-w-4xl mx-auto text-gray-700">
+                    Whether you're just starting out or want to sharpen your skills, TowMatch Training makes it easy. Our short, mobile-friendly lessons teach you how to stay safe, use equipment the right way, and stand out to top employers. Learn on your schedule—and get matched to better jobs, faster.
+                </p>
+            </div>
+
+            <!-- Why Training Matters Section -->
+            <div class="bg-white p-8 rounded-lg shadow-lg text-center mb-12">
+                 <h2 class="text-3xl font-bold mb-4 text-slate-800">Why Training Matters</h2>
+                 <p class="max-w-4xl mx-auto text-gray-700 mb-4">
+                    Whether you're new to towing or a seasoned pro, the right training sets you apart. TowMatch Driver, Dispatcher, & Technician training gives you quick, practical lessons designed for real-life towing jobs.
+                </p>
+                <p class="text-xl font-semibold text-blue-600">Get certified. Get noticed. Get hired.</p>
+            </div>
+
+            <!-- What You'll Learn Section -->
+            <div class="mb-12">
+                <h2 class="text-3xl font-bold mb-8 text-center text-slate-800">What You'll Learn</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="training-card">
+                        <h4>Getting Started</h4>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li>What to Expect as a Tow Truck Driver</li>
+                            <li>Understanding How TowMatch Works</li>
+                        </ul>
+                    </div>
+                    <div class="training-card">
+                        <h4>Certifications & Safety</h4>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li>TIMs Training Overview</li>
+                            <li>Basic WreckMaster Techniques</li>
+                            <li>Safety Do's and Don'ts</li>
+                        </ul>
+                    </div>
+                    <div class="training-card">
+                        <h4>Equipment Handling</h4>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li>Flatbed Basics</li>
+                            <li>Auto Loader Overview</li>
+                            <li>Proper Dolly Usage</li>
+                        </ul>
+                    </div>
+                    <div class="training-card">
+                        <h4>Customer Experience</h4>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li>Talking to Stranded Drivers</li>
+                            <li>De-Escalation & Damage Prevention</li>
+                            <li>Representing Your Company Professionally</li>
+                        </ul>
+                    </div>
+                    <div class="training-card">
+                        <h4>Job Readiness</h4>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li>Daily Pre-Trip Checklists</li>
+                            <li>Interview Prep & Common Mistakes</li>
+                            <li>Tools & Gear Must-Haves</li>
+                        </ul>
+                    </div>
+                     <div class="training-card">
+                        <h4>Advanced Operations (Coming Soon)</h4>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li>Recovery Techniques</li>
+                            <li>Heavy-Duty Operations</li>
+                            <li>Working in Extreme Conditions</li>
+                        </ul>
                     </div>
                 </div>
-
-                <div class="mt-12 text-center bg-blue-50 p-8 rounded-lg">
-                    <h2 class="text-3xl font-bold text-slate-700">Ready to Start?</h2>
-                    <p class="mt-4 text-lg text-gray-600">Get the first module on Onboarding & Safety for free when you sign up.</p>
-                    <button id="navSignupBtn" class="mt-6 bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-lg font-semibold shadow-md">Create Your Free Profile</button>
-                </div>
-
             </div>
+            
+            <!-- Features and Benefits Section -->
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-bold mb-4 text-center text-slate-800">Easy to Use, Built for Drivers</h3>
+                     <ul class="list-disc list-inside space-y-3 text-gray-700">
+                        <li><span class="font-semibold">Mobile-friendly videos</span> - Watch in your downtime</li>
+                        <li><span class="font-semibold">Badges on your profile</span> - Show employers you're ready</li>
+                        <li><span class="font-semibold">Quizzes & progress tracking</span> - Learn at your own pace</li>
+                        <li><span class="font-semibold">Instant unlock</span> - No waiting or complicated access</li>
+                     </ul>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-bold mb-4 text-center text-slate-800">Why Drivers Love It</h3>
+                     <ul class="list-disc list-inside space-y-3 text-gray-700">
+                        <li>Stand out to employers</li>
+                        <li>Improve your pay potential</li>
+                        <li>Get matched to more jobs</li>
+                        <li>Feel safer and more confident every day</li>
+                     </ul>
+                </div>
+            </div>
+
+            <!-- Pricing Section -->
+            <div class="bg-white p-8 rounded-lg shadow-lg text-center mb-12">
+                 <h2 class="text-3xl font-bold mb-4 text-slate-800">Pricing</h2>
+                 <div class="max-w-3xl mx-auto grid sm:grid-cols-2 gap-6 text-left">
+                     <div class="border p-6 rounded-lg">
+                        <h4 class="font-bold text-lg text-blue-600">Get Started FREE</h4>
+                        <p class="text-gray-700">First Module: Onboarding & Safety</p>
+                        <p class="text-2xl font-bold text-slate-800 mt-2">Free</p>
+                     </div>
+                     <div class="border p-6 rounded-lg">
+                        <h4 class="font-bold text-lg text-green-600">Full Access</h4>
+                        <p class="text-gray-700">$XX one-time OR included with TowMatch Pro</p>
+                        <p class="text-sm text-gray-600 mt-2">Top employers may sponsor your training - apply to find out!</p>
+                     </div>
+                 </div>
+            </div>
+
+             <!-- Powered By Section -->
+            <div class="text-center">
+                 <h3 class="text-2xl font-bold text-slate-800 mb-3">Powered by Industry Experts</h3>
+                 <p class="text-gray-600">Training developed in partnership with top tow professionals and instructors from Dolooma Academy and Tow Truck Tech.</p>
+            </div>
+
         </section>
+
     </main>
 
-    <footer class="bg-slate-700 text-slate-300 py-8 text-center">
+    <!-- Footer Section -->
+    <footer class="bg-slate-700 text-slate-300 py-8 text-center mt-12">
         <p>&copy; 2025 TowMatch. All rights reserved.</p>
         <p class="text-sm">Connecting Tow Truck Professionals.</p>
     </footer>
 
-    <!-- Modals and Notifications will be handled by script.js -->
-    <div id="loginModal" class="modal fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4"></div>
-    <div id="signupModal" class="modal fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4"></div>
-    <div id="notificationArea" class="fixed bottom-5 right-5 z-50"></div>
+    <!-- Modals and Notifications (Reused from index.html) -->
+    <div id="loginModal" class="modal fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4">
+        <div class="bg-white p-8 rounded-lg shadow-xl w-full max-w-md transform transition-all">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-semibold text-slate-700">Login to TowMatch</h3>
+                <button id="closeLoginModalBtn" class="text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+            </div>
+            <form id="loginForm">
+                <div class="mb-4">
+                    <label for="loginEmail" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                    <input type="email" id="loginEmail" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" placeholder="you@example.com" required>
+                </div>
+                <div class="mb-6">
+                    <label for="loginPassword" class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                    <input type="password" id="loginPassword" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold shadow-md">Login</button>
+                <p class="text-sm text-center mt-4 text-gray-600">
+                    Don't have an account? <a href="#" id="switchToSignupLink" class="text-blue-600 hover:underline">Sign Up</a>
+                </p>
+            </form>
+        </div>
+    </div>
 
-    <script src="script.js"></script>
+    <div id="signupModal" class="modal fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4">
+        <div class="bg-white p-8 rounded-lg shadow-xl w-full max-w-md transform transition-all">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-semibold text-slate-700">Create Your TowMatch Account</h2>
+                <button id="closeSignupModalBtn" class="text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+            </div>
+            <form id="signupForm">
+                 <div class="mb-4">
+                    <label for="signupName" class="block text-sm font-medium text-gray-700">Full Name</label>
+                    <input type="text" id="signupName" class="w-full p-2 border border-gray-300 rounded-md" required>
+                </div>
+                <div class="mb-4">
+                    <label for="signupEmail" class="block text-sm font-medium text-gray-700">Email Address</label>
+                    <input type="email" id="signupEmail" class="w-full p-2 border border-gray-300 rounded-md" required>
+                </div>
+                <div class="mb-4">
+                    <label for="signupPassword" class="block text-sm font-medium text-gray-700">Password</label>
+                    <input type="password" id="signupPassword" class="w-full p-2 border border-gray-300 rounded-md" required>
+                </div>
+                 <div class="mb-6">
+                    <label for="signupRole" class="block text-sm font-medium text-gray-700">Registering as</label>
+                    <select id="signupRole" name="role" required class="w-full p-2 border border-gray-300 rounded-md">
+                        <option value="">-- Select Role --</option>
+                        <option value="driver">Tow Truck Driver</option>
+                        <option value="dispatcher">Dispatcher</option>
+                        <option value="owner">Tow Business Owner</option>
+                    </select>
+                </div>
+                <div class="mb-6">
+                    <div class="flex items-start">
+                        <div class="flex items-center h-5">
+                            <input id="agreeTerms" name="agreeTerms" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded" required>
+                        </div>
+                        <div class="ml-3 text-sm">
+                            <label for="agreeTerms" class="font-medium text-gray-700">I agree to the</label>
+                            <a href="#" id="termsLink" class="font-medium text-indigo-600 hover:text-indigo-500 hover:underline"> Terms of Service </a>
+                            <span class="text-gray-700">and</span>
+                            <a href="#" id="privacyLink" class="font-medium text-indigo-600 hover:text-indigo-500 hover:underline"> Privacy Policy</a>.
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold shadow-md">Register</button>
+                 <p class="text-sm text-center mt-4 text-gray-600">
+                    Already have an account? <a href="#" id="switchToLoginLink" class="text-blue-600 hover:underline">Log in</a>
+                </p>
+            </form>
+        </div>
+    </div>
+    
+    <div id="notificationArea" class="fixed bottom-5 right-5 bg-slate-800 text-white p-4 rounded-lg shadow-lg z-50" style="display: none;">
+        <p id="notificationMessage"></p>
+    </div>
+
+    <!-- Assume script.js handles modal toggling and other interactions -->
+    <script>
+        // Basic modal handling logic (can be moved to script.js)
+        document.addEventListener('DOMContentLoaded', () => {
+            const loginModal = document.getElementById('loginModal');
+            const signupModal = document.getElementById('signupModal');
+
+            const navLoginBtn = document.getElementById('navLoginBtn');
+            const navSignupBtn = document.getElementById('navSignupBtn');
+
+            const closeLoginModalBtn = document.getElementById('closeLoginModalBtn');
+            const closeSignupModalBtn = document.getElementById('closeSignupModalBtn');
+            
+            const switchToSignupLink = document.getElementById('switchToSignupLink');
+            const switchToLoginLink = document.getElementById('switchToLoginLink');
+
+            function showModal(modal) {
+                if(modal) modal.style.display = 'flex';
+            }
+
+            function hideModal(modal) {
+                if(modal) modal.style.display = 'none';
+            }
+
+            if(navLoginBtn) navLoginBtn.addEventListener('click', () => showModal(loginModal));
+            if(navSignupBtn) navSignupBtn.addEventListener('click', () => showModal(signupModal));
+
+            if(closeLoginModalBtn) closeLoginModalBtn.addEventListener('click', () => hideModal(loginModal));
+            if(closeSignupModalBtn) closeSignupModalBtn.addEventListener('click', () => hideModal(signupModal));
+            
+            if(switchToSignupLink) switchToSignupLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                hideModal(loginModal);
+                showModal(signupModal);
+            });
+
+            if(switchToLoginLink) switchToLoginLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                hideModal(signupModal);
+                showModal(loginModal);
+            });
+
+            // Close modal if clicking outside the content
+            window.addEventListener('click', (event) => {
+                if (event.target === loginModal) {
+                    hideModal(loginModal);
+                }
+                if (event.target === signupModal) {
+                    hideModal(signupModal);
+                }
+            });
+        });
+    </script>
 </body>
 </html>
 
