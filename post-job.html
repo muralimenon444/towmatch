@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TowMatch - Post Job</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <header class="bg-slate-800 text-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold hover:text-slate-300">TowMatch</a>
+            <div class="space-x-4">
+                <a href="index.html" class="hover:text-slate-300">Home</a>
+                <a href="job-listings.html" class="hover:text-slate-300">For Drivers</a>
+                <a href="job-listings.html" class="hover:text-slate-300">For Dispatchers</a>
+                <a href="company-dashboard.html" class="hover:text-slate-300">For Companies</a>
+                <button id="navLoginBtn" class="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-md text-sm font-medium">Login</button>
+                <button id="navSignupBtn" class="bg-green-500 hover:bg-green-600 px-4 py-2 rounded-md text-sm font-medium">Sign Up</button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-8">
+        <section id="postJobPage">
+            <h2 class="text-3xl font-semibold mb-6 text-slate-700">Post a New Job</h2>
+            <div class="bg-white p-8 rounded-lg shadow-lg max-w-2xl mx-auto">
+                <form id="postJobForm">
+                    <div class="space-y-4">
+                        <div>
+                            <label for="postJobTitle" class="block text-sm font-medium text-gray-700">Job Title</label>
+                            <input type="text" id="postJobTitle" name="title" required class="w-full p-2 border border-gray-300 rounded-md">
+                        </div>
+                        <div>
+                            <label for="postJobLocation" class="block text-sm font-medium text-gray-700">Location (City, State)</label>
+                            <input type="text" id="postJobLocation" name="location" required class="w-full p-2 border border-gray-300 rounded-md">
+                        </div>
+                        <div>
+                            <label for="postJobType" class="block text-sm font-medium text-gray-700">Job Type</label>
+                            <select id="postJobType" name="jobtype" required class="w-full p-2 border border-gray-300 rounded-md">
+                                <option value="">-- Select Type --</option>
+                                <option value="Light Duty">Light Duty</option>
+                                <option value="Heavy Duty">Heavy Duty</option>
+                                <option value="Dispatcher">Dispatcher</option>
+                                <option value="Roadside Assistance">Roadside Assistance</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="postJobShift" class="block text-sm font-medium text-gray-700">Shift</label>
+                            <select id="postJobShift" name="shift" class="w-full p-2 border border-gray-300 rounded-md">
+                                <option value="Day">Day</option>
+                                <option value="Night">Night</option>
+                                <option value="Rotating">Rotating</option>
+                                <option value="On-Call">On-Call</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="postJobCerts" class="block text-sm font-medium text-gray-700">Preferred Certifications (Optional)</label>
+                            <input type="text" id="postJobCerts" name="certs" placeholder="WreckMaster, TIMs, etc." class="w-full p-2 border border-gray-300 rounded-md">
+                        </div>
+                        <div>
+                            <label for="postJobEquipment" class="block text-sm font-medium text-gray-700">Equipment Experience Required</label>
+                            <input type="text" id="postJobEquipment" name="equipment" placeholder="Flatbed, Wheel-lift, Rotator" class="w-full p-2 border border-gray-300 rounded-md">
+                        </div>
+                        <div>
+                            <label for="postJobDescription" class="block text-sm font-medium text-gray-700">Job Description</label>
+                            <textarea id="postJobDescription" name="description" rows="5" required class="w-full p-2 border border-gray-300 rounded-md"></textarea>
+                        </div>
+                        <div>
+                            <label for="postJobPay" class="block text-sm font-medium text-gray-700">Pay Range ($/hr)</label>
+                            <input type="text" id="postJobPay" name="pay" placeholder="e.g., $20-$25/hr" class="w-full p-2 border border-gray-300 rounded-md">
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label for="postJobStartDate" class="block text-sm font-medium text-gray-700">Start Date</label>
+                                <input type="date" id="postJobStartDate" name="start" class="w-full p-2 border border-gray-300 rounded-md">
+                            </div>
+                            <div>
+                                <label for="postJobExpireDate" class="block text-sm font-medium text-gray-700">Expiration Date</label>
+                                <input type="date" id="postJobExpireDate" name="expire" class="w-full p-2 border border-gray-300 rounded-md">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6 flex justify-end space-x-4">
+                        <a href="company-dashboard.html" class="bg-gray-200 hover:bg-gray-300 px-6 py-2 rounded-md">Cancel</a>
+                        <button type="button" id="postJobProceedBtn" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-md">Post Job</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-700 text-slate-300 py-8 text-center">
+        <p>&copy; 2025 TowMatch. All rights reserved.</p>
+        <p class="text-sm">Connecting Tow Truck Professionals.</p>
+    </footer>
+
+    <!-- Modals and Notifications -->
+    <div id="loginModal" class="modal fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4">
+        <div class="bg-white p-8 rounded-lg shadow-xl w-full max-w-md transform transition-all">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-semibold text-slate-700">Login to TowMatch</h3>
+                <button id="closeLoginModalBtn" class="text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+            </div>
+            <form id="loginForm">
+                <div class="mb-4">
+                    <label for="loginEmail" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                    <input type="email" id="loginEmail" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" placeholder="you@example.com" required>
+                </div>
+                <div class="mb-6">
+                    <label for="loginPassword" class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                    <input type="password" id="loginPassword" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold shadow-md">Login</button>
+                <p class="text-sm text-center mt-4 text-gray-600">
+                    Don't have an account? <a href="#" id="switchToSignupLink" class="text-blue-600 hover:underline">Sign Up</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <div id="signupModal" class="modal fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4">
+        <div class="bg-white p-8 rounded-lg shadow-xl w-full max-w-md transform transition-all">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-semibold text-slate-700">Create Your TowMatch Account</h2>
+                <button id="closeSignupModalBtn" class="text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+            </div>
+            <form id="signupForm">
+                 <div class="mb-4">
+                    <label for="signupName" class="block text-sm font-medium text-gray-700">Full Name</label>
+                    <input type="text" id="signupName" class="w-full p-2 border border-gray-300 rounded-md" required>
+                </div>
+                <div class="mb-4">
+                    <label for="signupEmail" class="block text-sm font-medium text-gray-700">Email Address</label>
+                    <input type="email" id="signupEmail" class="w-full p-2 border border-gray-300 rounded-md" required>
+                </div>
+                <div class="mb-4">
+                    <label for="signupPassword" class="block text-sm font-medium text-gray-700">Password</label>
+                    <input type="password" id="signupPassword" class="w-full p-2 border border-gray-300 rounded-md" required>
+                </div>
+                 <div class="mb-6">
+                    <label for="signupRole" class="block text-sm font-medium text-gray-700">Registering as</label>
+                    <select id="signupRole" name="role" required class="w-full p-2 border border-gray-300 rounded-md">
+                        <option value="">-- Select Role --</option>
+                        <option value="driver">Tow Truck Driver</option>
+                        <option value="dispatcher">Dispatcher</option>
+                        <option value="owner">Tow Business Owner</option>
+                    </select>
+                </div>
+                <div class="mb-6">
+                    <div class="flex items-start">
+                        <div class="flex items-center h-5">
+                            <input id="agreeTerms" name="agreeTerms" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded" required>
+                        </div>
+                        <div class="ml-3 text-sm">
+                            <label for="agreeTerms" class="font-medium text-gray-700">I agree to the</label>
+                            <a href="#" id="termsLink" class="font-medium text-indigo-600 hover:text-indigo-500 hover:underline"> Terms of Service </a>
+                            <span class="text-gray-700">and</span>
+                            <a href="#" id="privacyLink" class="font-medium text-indigo-600 hover:text-indigo-500 hover:underline"> Privacy Policy</a>.
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold shadow-md">Register</button>
+                 <p class="text-sm text-center mt-4 text-gray-600">
+                    Already have an account? <a href="#" id="switchToLoginLink" class="text-blue-600 hover:underline">Log in</a>
+                </p>
+            </form>
+        </div>
+    </div>
+    
+    <div id="notificationArea" class="fixed bottom-5 right-5 bg-slate-800 text-white p-4 rounded-lg shadow-lg z-50" style="display: none;">
+        <p id="notificationMessage"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

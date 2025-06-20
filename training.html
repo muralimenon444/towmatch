@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TowMatch - Training</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <header class="bg-slate-800 text-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold hover:text-slate-300">TowMatch</a>
+            <div class="space-x-4">
+                <a href="index.html" class="hover:text-slate-300">Home</a>
+                <a href="training.html" class="hover:text-slate-300">Training</a>
+                <a href="job-listings.html" class="hover:text-slate-300">For Drivers</a>
+                <a href="job-listings.html" class="hover:text-slate-300">For Dispatchers</a>
+                <a href="company-dashboard.html" class="hover:text-slate-300">For Companies</a>
+                <button id="navLoginBtn" class="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-md text-sm font-medium">Login</button>
+                <button id="navSignupBtn" class="bg-green-500 hover:bg-green-600 px-4 py-2 rounded-md text-sm font-medium">Sign Up</button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-8">
+        <section id="trainingPage">
+            <div class="bg-white p-8 rounded-lg shadow-lg">
+                <h1 class="text-4xl font-bold text-center text-slate-800">TowMatch Driver, Dispatcher, & Technician Training</h1>
+                <p class="text-xl text-center text-gray-600 mt-2">Upgrade Your Skills. Boost Your Job Matches. Get Paid What You're Worth.</p>
+                
+                <p class="mt-8 max-w-4xl mx-auto text-lg">Whether you’re just starting out or want to sharpen your skills, TowMatch Training makes it easy. Our short, mobile-friendly lessons teach you how to stay safe, use equipment the right way, and stand out to top employers. Learn on your schedule—and get matched to better jobs, faster.</p>
+
+                <div class="mt-12">
+                    <h2 class="text-3xl font-bold text-slate-700">What You’ll Learn</h2>
+                    <div class="mt-6 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Getting Started -->
+                        <div class="border p-6 rounded-lg">
+                            <h3 class="text-xl font-semibold text-slate-600 mb-3">Getting Started</h3>
+                            <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                <li>What to Expect as a Tow Professional</li>
+                                <li>Understanding How TowMatch Works</li>
+                                <li>Building a Standout Profile</li>
+                            </ul>
+                        </div>
+                        <!-- Certifications & Safety -->
+                        <div class="border p-6 rounded-lg">
+                            <h3 class="text-xl font-semibold text-slate-600 mb-3">Certifications & Safety</h3>
+                            <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                <li>TIMs Training Overview</li>
+                                <li>Basic WreckMaster Techniques</li>
+                                <li>On-the-Road Safety Do’s and Don’ts</li>
+                            </ul>
+                        </div>
+                        <!-- Equipment Handling -->
+                        <div class="border p-6 rounded-lg">
+                            <h3 class="text-xl font-semibold text-slate-600 mb-3">Equipment Handling</h3>
+                            <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                <li>Flatbed & Rollback Basics</li>
+                                <li>Auto Loader & Wheel-Lift Overview</li>
+                                <li>Proper Dolly and Winching Usage</li>
+                            </ul>
+                        </div>
+                        <!-- Customer Experience -->
+                        <div class="border p-6 rounded-lg">
+                            <h3 class="text-xl font-semibold text-slate-600 mb-3">Customer Experience</h3>
+                            <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                <li>Communicating with Stranded Motorists</li>
+                                <li>De-Escalation & Damage Prevention</li>
+                                <li>Representing Your Company Professionally</li>
+                            </ul>
+                        </div>
+                        <!-- Job Readiness -->
+                        <div class="border p-6 rounded-lg">
+                            <h3 class="text-xl font-semibold text-slate-600 mb-3">Job Readiness</h3>
+                            <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                <li>Daily Pre-Trip Checklists</li>
+                                <li>Interview Prep & Common Mistakes</li>
+                                <li>Essential Tools & Gear</li>
+                            </ul>
+                        </div>
+                        <!-- Advanced Operations -->
+                        <div class="border p-6 rounded-lg bg-gray-50">
+                            <h3 class="text-xl font-semibold text-slate-600 mb-3">Advanced Operations</h3>
+                             <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                <li>Complex Recovery Techniques</li>
+                                <li>Heavy-Duty Operations</li>
+                                <li>Working in Extreme Conditions</li>
+                                <li class="text-gray-500 italic">(Coming Soon)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12 text-center bg-blue-50 p-8 rounded-lg">
+                    <h2 class="text-3xl font-bold text-slate-700">Ready to Start?</h2>
+                    <p class="mt-4 text-lg text-gray-600">Get the first module on Onboarding & Safety for free when you sign up.</p>
+                    <button id="navSignupBtn" class="mt-6 bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-lg font-semibold shadow-md">Create Your Free Profile</button>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-700 text-slate-300 py-8 text-center">
+        <p>&copy; 2025 TowMatch. All rights reserved.</p>
+        <p class="text-sm">Connecting Tow Truck Professionals.</p>
+    </footer>
+
+    <!-- Modals and Notifications will be handled by script.js -->
+    <div id="loginModal" class="modal fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4"></div>
+    <div id="signupModal" class="modal fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4"></div>
+    <div id="notificationArea" class="fixed bottom-5 right-5 z-50"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

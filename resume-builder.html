@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TowMatch - Resume Builder</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <header class="bg-slate-800 text-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold hover:text-slate-300">TowMatch</a>
+            <div class="space-x-4">
+                <a href="index.html" class="hover:text-slate-300">Home</a>
+                <a href="job-listings.html" class="hover:text-slate-300">For Drivers</a>
+                <a href="job-listings.html" class="hover:text-slate-300">For Dispatchers</a>
+                <a href="company-dashboard.html" class="hover:text-slate-300">For Companies</a>
+                <button id="navLoginBtn" class="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-md text-sm font-medium">Login</button>
+                <button id="navSignupBtn" class="bg-green-500 hover:bg-green-600 px-4 py-2 rounded-md text-sm font-medium">Sign Up</button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-8">
+        <section id="resumeBuilderPage">
+            <h2 class="text-3xl font-semibold mb-6 text-slate-700">Tow-Specific Resume Builder</h2>
+            <div class="bg-white p-8 rounded-lg shadow-lg">
+                <form id="resumeBuilderForm">
+                    <div class="form-section">
+                        <h3>Step 1: Personal Information</h3>
+                        <label>Full Name</label><input type="text" class="w-full p-2 border border-gray-300 rounded-md" />
+                        <label>Phone Number</label><input type="text" class="w-full p-2 border border-gray-300 rounded-md" />
+                        <label>Email Address</label><input type="email" class="w-full p-2 border border-gray-300 rounded-md" />
+                        <label>City & State</label><input type="text" class="w-full p-2 border border-gray-300 rounded-md" />
+                        <label>Willing to Relocate?</label>
+                        <select class="w-full p-2 border border-gray-300 rounded-md">
+                            <option value="">-- Select --</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Step 2: License & Certifications</h3>
+                        <label>License Type</label>
+                        <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
+                            <label class="inline-flex items-center font-normal"><input type="checkbox" class="mr-2" /> CDL A</label>
+                            <label class="inline-flex items-center font-normal"><input type="checkbox" class="mr-2" /> CDL B</label>
+                            <label class="inline-flex items-center font-normal"><input type="checkbox" class="mr-2" /> Non-CDL</label>
+                        </div>
+                        <label>Certifications</label>
+                        <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
+                            <label class="inline-flex items-center font-normal"><input type="checkbox" class="mr-2" /> WreckMaster</label>
+                            <label class="inline-flex items-center font-normal"><input type="checkbox" class="mr-2" /> TRAA</label>
+                            <label class="inline-flex items-center font-normal"><input type="checkbox" class="mr-2" /> TIMs</label>
+                            <label class="inline-flex items-center font-normal"><input type="checkbox" class="mr-2" /> OSHA</label>
+                            <label class="inline-flex items-center font-normal"><input type="checkbox" class="mr-2" /> First Aid/CPR</label>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Step 3: Equipment Experience</h3>
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-2">
+                           <label class="inline-flex items-center font-normal"><input type="checkbox" class="mr-2" /> Wheel-Lift</label>
+                           <label class="inline-flex items-center font-normal"><input type="checkbox" class="mr-2" /> Flatbed / Rollback</label>
+                           <label class="inline-flex items-center font-normal"><input type="checkbox" class="mr-2" /> Heavy Wrecker</label>
+                           <label class="inline-flex items-center font-normal"><input type="checkbox" class="mr-2" /> Rotator</label>
+                           <label class="inline-flex items-center font-normal"><input type="checkbox" class="mr-2" /> Auto Loader</label>
+                           <label class="inline-flex items-center font-normal"><input type="checkbox" class="mr-2" /> Motorcycle Towing</label>
+                           <label class="inline-flex items-center font-normal"><input type="checkbox" class="mr-2" /> Winch-Outs / Recoveries</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3>Step 4: Work Experience</h3>
+                        <div id="workExperienceContainer" class="space-y-6 mt-4"></div>
+                        <button id="addExperienceBtn" type="button" class="mt-4 rounded-md bg-indigo-50 px-3 py-2 text-sm font-semibold text-indigo-600 shadow-sm hover:bg-indigo-100">Add Experience</button>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Step 5: Availability & Preferences</h3>
+                        <label>Available Shifts</label>
+                        <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
+                            <label class="inline-flex items-center font-normal"><input type="checkbox" class="mr-2" /> Day</label>
+                            <label class="inline-flex items-center font-normal"><input type="checkbox" class="mr-2" /> Night</label>
+                            <label class="inline-flex items-center font-normal"><input type="checkbox" class="mr-2" /> Weekend</label>
+                        </div>
+                        <label>Preferred Schedule</label>
+                        <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
+                            <label class="inline-flex items-center font-normal"><input type="checkbox" class="mr-2" /> Full-Time</label>
+                            <label class="inline-flex items-center font-normal"><input type="checkbox" class="mr-2" /> Part-Time</label>
+                        </div>
+                        <label>Expected Pay ($/hr)</label><input type="number" class="w-full p-2 border border-gray-300 rounded-md" />
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Step 6: Summary (Optional)</h3>
+                        <label>Professional Summary</label><textarea rows="4" class="w-full p-2 border border-gray-300 rounded-md"></textarea>
+                    </div>
+                    
+                    <div class="mt-10 flex items-center justify-end gap-x-6">
+                        <a href="driver-dashboard.html" class="text-sm font-semibold leading-6 text-gray-900">Cancel</a>
+                        <button type="submit" class="rounded-md bg-indigo-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Preview My Resume</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-700 text-slate-300 py-8 text-center">
+        <p>&copy; 2025 TowMatch. All rights reserved.</p>
+        <p class="text-sm">Connecting Tow Truck Professionals.</p>
+    </footer>
+
+    <!-- Modals and Notifications -->
+    <div id="loginModal" class="modal fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4">
+        <div class="bg-white p-8 rounded-lg shadow-xl w-full max-w-md transform transition-all">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-semibold text-slate-700">Login to TowMatch</h3>
+                <button id="closeLoginModalBtn" class="text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+            </div>
+            <form id="loginForm">
+                <div class="mb-4">
+                    <label for="loginEmail" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                    <input type="email" id="loginEmail" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" placeholder="you@example.com" required>
+                </div>
+                <div class="mb-6">
+                    <label for="loginPassword" class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                    <input type="password" id="loginPassword" class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold shadow-md">Login</button>
+                <p class="text-sm text-center mt-4 text-gray-600">
+                    Don't have an account? <a href="#" id="switchToSignupLink" class="text-blue-600 hover:underline">Sign Up</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <div id="signupModal" class="modal fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4">
+        <div class="bg-white p-8 rounded-lg shadow-xl w-full max-w-md transform transition-all">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-semibold text-slate-700">Create Your TowMatch Account</h2>
+                <button id="closeSignupModalBtn" class="text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+            </div>
+            <form id="signupForm">
+                 <div class="mb-4">
+                    <label for="signupName" class="block text-sm font-medium text-gray-700">Full Name</label>
+                    <input type="text" id="signupName" class="w-full p-2 border border-gray-300 rounded-md" required>
+                </div>
+                <div class="mb-4">
+                    <label for="signupEmail" class="block text-sm font-medium text-gray-700">Email Address</label>
+                    <input type="email" id="signupEmail" class="w-full p-2 border border-gray-300 rounded-md" required>
+                </div>
+                <div class="mb-4">
+                    <label for="signupPassword" class="block text-sm font-medium text-gray-700">Password</label>
+                    <input type="password" id="signupPassword" class="w-full p-2 border border-gray-300 rounded-md" required>
+                </div>
+                 <div class="mb-6">
+                    <label for="signupRole" class="block text-sm font-medium text-gray-700">Registering as</label>
+                    <select id="signupRole" name="role" required class="w-full p-2 border border-gray-300 rounded-md">
+                        <option value="">-- Select Role --</option>
+                        <option value="driver">Tow Truck Driver</option>
+                        <option value="dispatcher">Dispatcher</option>
+                        <option value="owner">Tow Business Owner</option>
+                    </select>
+                </div>
+                <div class="mb-6">
+                    <div class="flex items-start">
+                        <div class="flex items-center h-5">
+                            <input id="agreeTerms" name="agreeTerms" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded" required>
+                        </div>
+                        <div class="ml-3 text-sm">
+                            <label for="agreeTerms" class="font-medium text-gray-700">I agree to the</label>
+                            <a href="#" id="termsLink" class="font-medium text-indigo-600 hover:text-indigo-500 hover:underline"> Terms of Service </a>
+                            <span class="text-gray-700">and</span>
+                            <a href="#" id="privacyLink" class="font-medium text-indigo-600 hover:text-indigo-500 hover:underline"> Privacy Policy</a>.
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold shadow-md">Register</button>
+                 <p class="text-sm text-center mt-4 text-gray-600">
+                    Already have an account? <a href="#" id="switchToLoginLink" class="text-blue-600 hover:underline">Log in</a>
+                </p>
+            </form>
+        </div>
+    </div>
+    
+    <div id="notificationArea" class="fixed bottom-5 right-5 bg-slate-800 text-white p-4 rounded-lg shadow-lg z-50" style="display: none;">
+        <p id="notificationMessage"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
